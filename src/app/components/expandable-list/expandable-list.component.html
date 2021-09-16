@@ -1,0 +1,39 @@
+<div *ngFor="let item of level01Items | keyvalue; let level0Index = index;">
+    <div id="level-0-Header-{{item.key}}" class="collapsible" (click)="toggleCollapse0(item.key, item.key)">
+        {{item.key + " ("+ level01Items[item.key]?.length +")" }}
+    </div>
+    <div id="level-0-Content-{{item.key}}" class="content">
+
+        <!-- -----------------LEVEL 1 Hirarchy--------------------- -->
+        <div *ngIf="level01Items[item.key]?.length">
+            <div *ngFor="let item1 of level01Items[item.key]; let level1Index = index">
+                <div id="level-1-Header-{{level1Index}}" class="collapsible">{{item1.name}}</div>
+                <div class="content">
+
+                    <!-- -----------------LEVEL 2 Hirarchy--------------------- -->
+                    <div *ngIf="!level2Items?.length">
+                        <div *ngFor="let item2 of level2Items; let level2Index = index">
+                            <div id="level-2-Header-{{level2Index}}" class="collapsible">{{item2.name}}</div>
+                            <div class="content">
+
+                                <!-- -----------------LEVEL 3 Hirarchy--------------------- -->
+                                <div *ngIf="!level3Items?.length">
+                                    <div *ngFor="let item3 of level3Items; let level3Index = index">
+                                        <div id="level-3-Header-{{level3Index}}" class="collapsible">{{item3.name}}
+                                        </div>
+                                        <!-- <div class="content">
+
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

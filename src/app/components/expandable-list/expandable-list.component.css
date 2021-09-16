@@ -1,0 +1,27 @@
+.collapsible {
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.active,
+.collapsible:hover {
+  /* background-color: lightblue; */
+  font-weight: 700;
+  color: #0d47a1;
+}
+
+.content {
+  padding: 0 16px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: white;
+}
